@@ -20,7 +20,7 @@ four_g= st.number_input("Four g", min_value=0, max_value=1, step=1)
 int_memory = st.number_input("Internal Memory", min_value=2, max_value=64, step=10)
 m_dep= st.number_input("mobile depth", min_value=0, max_value=1, step=1)
 mobile_wt = st.number_input("Mobile Weight", min_value=80, max_value=200, step=10)
-n_cores = st.number_input("No of cores", min_value=1, max_value=8, step=1
+n_cores = st.number_input("No of cores", min_value=1, max_value=8, step=1)
 px_height = st.number_input("Pixel Resolution Height", min_value=0, max_value=1960, step=100)
 px_width = st.number_input("Pixel Resolution Width", min_value=500, max_value=1998, step=100)
 ram = st.number_input("RAM (MB)", min_value=256, max_value=3998, step=256)
