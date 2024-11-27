@@ -32,11 +32,26 @@ touch_screen= st.number_input("Touch screen", min_value=0, max_value=1, step=1)
 wifi= st.number_input("Wifi", min_value=0, max_value=1, step=1)
 
 
-# Add more input fields as per your model
+# Define price categories
+price_categories = {
+    0: "Low-Priced",
+    1: "Medium-Priced",
+    2: "Expensive",
+    3: "High-Expensive"
+}
 
 # Predict the price
 if st.button("Predict Price"):
     # Adjust the input list according to your model's feature requirements
-    input_features = np.array([[battery_power,blue,clock_speed,dual_sim,fc,four_g,int_memory,m_dep,mobile_wt,n_cores,px_height,px_width, ram, sc_h,sc_w,talk_time,three_g,touch_screen,wifi]])
+    input_features = np.array([[
+        battery_power, blue, clock_speed, dual_sim, fc, four_g, int_memory,
+        m_dep, mobile_wt, n_cores, px_height, px_width, ram, sc_h, sc_w,
+        talk_time, three_g, touch_screen, wifi
+    ]])
+
+    # Perform prediction
     prediction = model.predict(input_features)
-    st.success(f"Predicted Price: ₹{prediction[0]:,.2f}")
+
+    # Map prediction to a price category
+    price_category = price_categories.get(prediction[0], "Unknown")
+    st.success(f"Predicted Price Category: {price_category}")
