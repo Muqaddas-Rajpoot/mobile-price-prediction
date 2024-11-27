@@ -55,6 +55,8 @@ if st.button("Predict Price"):
     # Map prediction to a price category
     price_category = price_categories.get(prediction[0], "Unknown")
     st.success(f"Predicted Price Category: {price_category}")
+prediction = model.predict(input_features)
 
-probabilities = model.predict_proba(input_features)
 print("Prediction probabilities:", probabilities)
+price_category = price_categories.get(prediction[0], "Unknown")
+st.success(f"Predicted Price Category: {price_category}")
