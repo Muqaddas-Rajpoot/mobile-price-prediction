@@ -42,7 +42,7 @@ st.markdown(
 
 # App title
 st.title("📱 Mobile Phone Price Predictor")
-st.write("Enter the features of the mobile phone:")
+
 
 # Define input fields inside a styled container
 with st.container():
